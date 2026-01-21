@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  bot-master:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      - NODE_ENV=production
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BOT_OWNER_ID=${BOT_OWNER_ID}
+      - DATABASE_URL=${DATABASE_URL}
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    
+  # Optional: PostgreSQL for local development
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=botmaster
+      - POSTGRES_PASSWORD=botmaster123
+      - POSTGRES_DB=botmaster
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      
+  # Optional: Redis for caching
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
