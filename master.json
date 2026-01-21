@@ -17,7 +17,7 @@
   },
   
   "permissions": {
-    "owner_id": "YOUR_TELEGRAM_ID",
+    "owner_id": "6454347745",
     "admin_rights": ["ban", "kick", "mute", "pin", "invite"],
     "member_rights": ["report", "info", "help"]
   },
