@@ -28,6 +28,20 @@ A serverless, modular Telegram bot platform built on Cloudflare Workers.
 - Cloudflare account
 - Telegram bot token from @BotFather
 
+---
+```json
+export default {
+  name: 'feature_name',
+  version: 'v1',
+  events: ['message', 'callback_query'],
+  permissions: ['admin'],
+  handler: async (ctx) => {
+    // Your code here
+  }
+};
+
+```
+
 ### 2. Local Setup
 ```bash
 # Clone and install
@@ -35,6 +49,4 @@ git clone <repository>
 cd bot-master
 npm install
 
-# Configure
-cp master.json.example master.json
-# Edit master.json with your settings
+
