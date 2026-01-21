@@ -1,14 +1,41 @@
 {
   "version": "v1",
   "status": "active",
-  "description": "Initial version with core features",
+  "description": "Initial version with all core features",
   "features_auto_register": true,
   "features": [
     "admin",
     "welcome",
     "autoreply",
-    "report"
+    "report",
+    "help",
+    "settings",
+    "startup"
   ],
   "release_date": "2024-01-01",
-  "author": "Bot Master Platform"
+  "author": "Bot Master Platform",
+  "dependencies": [],
+  "changelog": [
+    "Initial release with core features",
+    "Admin moderation system",
+    "Welcome system with images",
+    "Auto-reply system",
+    "Report system",
+    "Help and documentation",
+    "Settings management",
+    "System commands"
+  ],
+  "telegram_requirements": {
+    "bot_admin": true,
+    "permissions": [
+      "can_delete_messages",
+      "can_restrict_members",
+      "can_invite_users",
+      "can_pin_messages"
+    ]
+  },
+  "compatibility": {
+    "node": ">=18.0.0",
+    "platform": "Cloudflare Workers"
+  }
 }
