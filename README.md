@@ -41,6 +41,7 @@ export default {
 };
 
 ```
+---
 
 ### 2. Local Setup
 ```bash
