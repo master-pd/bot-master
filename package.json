@@ -6,15 +6,59 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "test": "echo \"No tests specified\" && exit 0"
+    "deploy:prod": "wrangler deploy --env production",
+    "deploy:preview": "wrangler deploy --env preview",
+    "test": "node test.js",
+    "test:unit": "node --test test/unit",
+    "test:integration": "node --test test/integration",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "db:backup": "node scripts/backup.js",
+    "start": "wrangler dev",
+    "build": "echo 'No build step required'",
+    "postinstall": "echo 'Installation complete! Run npm run deploy to start'",
+    "health": "curl -s https://your-worker.workers.dev/health | jq ."
   },
   "dependencies": {
-    "telegraf": "^4.15.3"
+    "telegraf": "^4.15.3",
+    "pg": "^8.11.3",
+    "ioredis": "^5.3.2",
+    "cloudinary": "^1.41.0",
+    "validator": "^13.11.0",
+    "dotenv": "^16.3.1",
+    "wrangler": "^3.0.0",
+    "nanoid": "^5.0.3"
   },
   "devDependencies": {
-    "wrangler": "^3.0.0"
+    "@cloudflare/workers-types": "^4.20231121.0",
+    "@types/pg": "^8.10.7",
+    "@types/node": "^20.8.10",
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "serverless",
+    "cloudflare",
+    "moderation",
+    "platform"
+  ],
+  "author": "Bot Master Platform",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/bot-master-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/bot-master-platform/issues"
+  },
+  "homepage": "https://github.com/yourusername/bot-master-platform#readme"
 }
