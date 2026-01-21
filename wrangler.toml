@@ -2,18 +2,57 @@ name = "bot-master"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
+usage_model = "bundled"
+
+[env.production]
+name = "bot-master-prod"
+workers_dev = true
+route = "bot-master.your-domain.com/*"
+zone_id = "your_zone_id"
+
+[env.preview]
+name = "bot-master-preview"
+workers_dev = true
 
 [vars]
 PLATFORM_NAME = "Bot Master Platform"
+NODE_ENV = "production"
+LOG_LEVEL = "info"
+MAX_REQUEST_SIZE = "1024"
 
+# KV Namespace for cache
 [[kv_namespaces]]
 binding = "BOT_CACHE"
 id = "bot-cache-id"
 preview_id = "bot-cache-preview-id"
 
-# Secrets to set in Cloudflare Dashboard:
-# BOT_TOKEN = your_main_bot_token
-# BOT_OWNER_ID = your_telegram_id
-# DATABASE_URL = neon_postgres_url
-# CLOUDINARY_URL = cloudinary_url (optional)
-# REDIS_URL = redis_url (optional)
+# D1 Database (alternative to Neon)
+[[d1_databases]]
+binding = "DB"
+database_name = "bot-master-db"
+database_id = "d1-database-id"
+preview_database_id = "d1-preview-id"
+
+# R2 Bucket for storage
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "bot-master-storage"
+preview_bucket_name = "bot-master-storage-preview"
+
+# Analytics Engine
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+dataset = "bot-master-analytics"
+
+[build]
+command = "npm run build"
+
+[build.upload]
+format = "modules"
+dir = "."
+main = "./worker.js"
+
+[[rules]]
+type = "Worker"
+fallthrough = true
+globs = ["**/*.js", "**/*.mjs"]
