@@ -1,0 +1,39 @@
+{
+  "exact": {
+    "hello": ["Hi there! 👋", "Hello! How can I help?", "Hey! 😊"],
+    "hi": ["Hello! 👋", "Hi! What's up?", "Hey there!"],
+    "how are you": ["I'm doing great, thanks! 😊", "All good here!", "I'm fine, how about you?"],
+    "thanks": ["You're welcome! 👍", "No problem! 😊", "Anytime!"],
+    "thank you": ["My pleasure! ✨", "You're welcome!", "Happy to help!"]
+  },
+  
+  "contains": {
+    "bot": ["Yes, I'm a bot! 🤖", "Bot at your service!", "That's me! I'm a bot."],
+    "help": ["How can I help you?", "Need assistance?", "I'm here to help!"],
+    "weather": ["I can't check weather yet, but that's a cool feature idea! 🌤️"],
+    "time": ["I don't have a watch, but I can tell you I'm always online! ⏰"],
+    "love": ["That's sweet! ❤️", "Aww! 😊", "Love is in the air!"],
+    "haha": ["Glad I could make you laugh! 😄", "Haha! 😂", "Fun times!"]
+  },
+  
+  "regex": [
+    {
+      "pattern": "^(good)?\\s*(morning|evening|night)",
+      "reply": ["Good {time}! 🌞", "Hope you're having a great {time}!", "{time_capitalized}! 😊"]
+    },
+    {
+      "pattern": "what('?s| is) your name",
+      "reply": ["I'm Bot Master! 🤖", "You can call me Bot Master!", "I'm the Bot Master platform!"]
+    },
+    {
+      "pattern": "who (made|created) you",
+      "reply": ["I was created by the Bot Master Platform team! 🚀", "Built with ❤️ by Bot Master!"]
+    }
+  ],
+  
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-01-01",
+    "total_triggers": 15
+  }
+}
