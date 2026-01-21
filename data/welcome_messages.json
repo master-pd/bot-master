@@ -1,0 +1,40 @@
+{
+  "messages": [
+    "🎉 Welcome {user} to {group}! We're excited to have you here!",
+    "👋 Hello {user}! Welcome to {group}. Enjoy your stay!",
+    "🌟 Welcome aboard, {user}! Great to have you in {group}!",
+    "😊 Hi {user}! Welcome to the group! Feel free to introduce yourself!",
+    "🫡 Welcome {user}! You're our awesome new member!",
+    "🤗 Hey {user}! Welcome to {group}. Make yourself at home!",
+    "✨ Welcome {user}! Hope you have a great time here!",
+    "🎊 Welcome {user}! Nice to meet you!",
+    "👏 Welcome {user}! We've been expecting you!",
+    "💫 Hello {user}! Welcome to our wonderful community!"
+  ],
+  
+  "images": [
+    "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=300&fit=crop"
+  ],
+  
+  "rules": [
+    "1. Be respectful to everyone",
+    "2. No spam or advertising",
+    "3. No NSFW content",
+    "4. Follow admin instructions",
+    "5. Use English when possible",
+    "6. No personal attacks",
+    "7. Keep discussions civil",
+    "8. Report issues to admins"
+  ],
+  
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-01-01",
+    "total_messages": 10,
+    "total_images": 5
+  }
+}
