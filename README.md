@@ -43,6 +43,27 @@ export default {
 ```
 ---
 
+#Table example 
+
+```sql
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  telegram_id BIGINT UNIQUE,
+  username VARCHAR(255),
+  first_name VARCHAR(255),
+  join_date TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE reports (
+  id VARCHAR(50) PRIMARY KEY,
+  target_user_id BIGINT,
+  reporter_id BIGINT,
+  chat_id BIGINT,
+  reason TEXT,
+  status VARCHAR(20) DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT NOW()
+);
+```
 ### 2. Local Setup
 ```bash
 # Clone and install
