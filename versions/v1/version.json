@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "status": "active",
+  "description": "Initial version with core features",
+  "features_auto_register": true,
+  "features": [
+    "admin",
+    "welcome",
+    "autoreply",
+    "report"
+  ],
+  "release_date": "2024-01-01",
+  "author": "Bot Master Platform"
+}
