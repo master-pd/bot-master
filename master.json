@@ -1,0 +1,53 @@
+{
+  "platform": {
+    "name": "Bot Master",
+    "version": "1.0.0",
+    "status": "active"
+  },
+  
+  "telegram": {
+    "webhook_domain": "YOUR_WORKER_URL",
+    "max_connections": 40
+  },
+  
+  "features": {
+    "auto_load": true,
+    "ignore_bot_messages": true,
+    "log_events": false
+  },
+  
+  "permissions": {
+    "owner_id": "YOUR_TELEGRAM_ID",
+    "admin_rights": ["ban", "kick", "mute", "pin", "invite"],
+    "member_rights": ["report", "info", "help"]
+  },
+  
+  "database": {
+    "provider": "neon",
+    "auto_create_tables": true
+  },
+  
+  "security": {
+    "rate_limit_per_user": 10,
+    "rate_limit_window": 60,
+    "max_message_length": 4000
+  },
+  
+  "welcome": {
+    "enabled": true,
+    "image_enabled": true,
+    "random_messages": true
+  },
+  
+  "autoreply": {
+    "enabled": true,
+    "learning_mode": false,
+    "per_chat": true
+  },
+  
+  "report": {
+    "enabled": true,
+    "notify_owner": true,
+    "auto_review": true
+  }
+}
